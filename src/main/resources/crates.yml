@@ -1,0 +1,78 @@
+# ============================================================
+#  HavocCasino  •  crates
+# ------------------------------------------------------------
+#  Each crate has a cost (Vault money) and a weighted reward table.
+#  Payout for a reward = crate cost * multiplier.
+#    multiplier: 0    -> bust (you lose your cost)
+#    multiplier: 1    -> break even (get your cost back)
+#    multiplier: 5    -> win 5x your cost
+#
+#  Tune the weights vs. multipliers to set the house edge. The default
+#  crates below are tuned to roughly a 5% edge:
+#    Common expected return = sum(weight*multiplier)/sum(weight) ≈ 0.95
+#
+#  Open with:  /gcrate <id>     e.g. /gcrate common
+#  List with:  /gcrate
+# ============================================================
+
+crates:
+
+  common:
+    display: "<green>Common Crate"
+    icon: CHEST
+    cost: 100
+    rewards:
+      - name: "<dark_gray>Nothing"
+        material: COAL
+        weight: 30
+        multiplier: 0
+      - name: "<white>Small Win"
+        material: IRON_NUGGET
+        weight: 40
+        multiplier: 0.5
+      - name: "<yellow>Break Even"
+        material: GOLD_NUGGET
+        weight: 15
+        multiplier: 1
+      - name: "<aqua>Double Up"
+        material: DIAMOND
+        weight: 10
+        multiplier: 2
+      - name: "<light_purple>Rare Haul"
+        material: EMERALD
+        weight: 4
+        multiplier: 5
+      - name: "<gold><bold>JACKPOT"
+        material: NETHER_STAR
+        weight: 1
+        multiplier: 20
+
+  highroller:
+    display: "<gold>High Roller Crate"
+    icon: ENDER_CHEST
+    cost: 1000
+    rewards:
+      - name: "<dark_gray>Busted"
+        material: COAL
+        weight: 72
+        multiplier: 0
+      - name: "<white>Consolation"
+        material: IRON_INGOT
+        weight: 7
+        multiplier: 0.75
+      - name: "<yellow>Refund"
+        material: GOLD_INGOT
+        weight: 10
+        multiplier: 1
+      - name: "<aqua>Triple"
+        material: DIAMOND_BLOCK
+        weight: 8
+        multiplier: 3
+      - name: "<light_purple>Big Score"
+        material: EMERALD_BLOCK
+        weight: 2
+        multiplier: 8
+      - name: "<gold><bold>MEGA JACKPOT"
+        material: NETHER_STAR
+        weight: 1
+        multiplier: 40

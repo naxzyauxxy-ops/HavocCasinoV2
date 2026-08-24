@@ -1,0 +1,61 @@
+# ============================================================
+#  HavocCasino  •  messages
+# ------------------------------------------------------------
+#  Supports MiniMessage formatting (<green>, <bold>, <gradient>…)
+#  and placeholders:
+#    • internal tokens: {amount} {multiplier} {player} {pool} {chance}
+#    • PlaceholderAPI %...% placeholders (when PlaceholderAPI is installed),
+#      e.g. %havoccasino_jackpot%, %havoccasino_messages%,
+#      or any placeholder from another expansion like %player_name%.
+#
+#  Players can turn these messages on/off for themselves with /hc messages.
+# ============================================================
+
+slots:
+  win: "<green>You won <bold>{amount}</bold>! <gray>(x{multiplier})"
+  lose: "<red>No match this time. <gray>You lost {amount}."
+
+mines:
+  cashout: "<green>Cashed out <bold>{amount}</bold>! <gray>(x{multiplier})"
+  board-cleared: "<green><bold>Board cleared!</bold> You won <bold>{amount}</bold>! <gray>(x{multiplier})"
+  boom: "<red>Boom! You hit a mine and lost {amount}."
+  auto-cashout: "<green>Auto cashed out <bold>{amount}</bold> <gray>(x{multiplier}) on close."
+  refund: "<gray>Mines round cancelled — your bet of {amount} was refunded."
+  cashout-need-reveal: "<gray>Reveal at least one tile before cashing out."
+
+jackpot:
+  info-pool: "<gold>Current jackpot: <bold>{pool}"
+  info-howto: "<gray>Enter with <white>/jackpot <bet><gray> for a <white>{chance}%<gray> chance to win it all."
+  win-broadcast: "<gradient:#FFD700:#FF8C00><bold>JACKPOT!</bold></gradient> <yellow>{player} <white>just won <gold>{amount}<white>!"
+  lose: "<red>No luck this time. <gray>The jackpot is now <gold>{pool}<gray>."
+
+crates:
+  list-header: "<gold><bold>Crates</bold> <gray>— open with <white>/gcrate <name>"
+  list-entry: "<gray>• <white>{crate} <gray>(<white>{id}<gray>) — cost <yellow>{cost}"
+  unknown: "<red>There is no crate named '<white>{name}</white>'."
+  win: "<green>{crate} <gray>» <bold>{reward}</bold> <green>— you won <bold>{amount}</bold>! <gray>(x{multiplier})"
+  bust: "<red>{crate} <gray>» <bold>{reward}</bold> <red>— nothing this time. <gray>You lost {amount}."
+
+settings:
+  gui-title: "<dark_gray>✦ <gold>Message Settings</gold> ✦"
+  toggle-on-name: "<green><bold>Messages: ON</bold>"
+  toggle-on-lore: "<gray>Click to turn <red>OFF</red>."
+  toggle-off-name: "<red><bold>Messages: OFF</bold>"
+  toggle-off-lore: "<gray>Click to turn <green>ON</green>."
+  enabled: "<green>HavocCasino messages are now <bold>ON</bold>."
+  disabled: "<red>HavocCasino messages are now <bold>OFF</bold>."
+
+room:
+  building: "<gray>Building your gambling room — hang tight..."
+  created: "<green>Your gambling room is ready! <gray>Teleporting you in."
+  teleported: "<gray>Welcome back to your gambling room."
+  none: "<gray>You don't have a room yet. Use <white>/gamblingroom<gray> to create one."
+  deleted: "<gray>Your gambling room has been released. <white>/gamblingroom<gray> makes a new one."
+  cant-afford: "<red>You need <white>{cost}<red> to create a gambling room."
+  not-configured: "<red>Gambling rooms aren't set up yet. Ask an admin."
+
+menu:
+  title: "<dark_gray>✦ <gold>Havoc Casino</gold> ✦"
+  bets-title: "<dark_gray>✦ <gold>{game}</gold> <gray>— pick a bet ✦"
+  crates-title: "<dark_gray>✦ <gold>Crates</gold> ✦"
+  mines-title: "<dark_gray>✦ <red>Mines Setup</red> ✦"

@@ -1,0 +1,86 @@
+# ============================================================
+#  HavocCasino  •  configuration
+# ============================================================
+
+currency:
+  # All games use Vault money. This is just the display symbol.
+  money-symbol: "$"
+  # Show big numbers compactly (e.g. $5m instead of $5,000,000.00). Players can
+  # also TYPE shorthand bets like 5m, 10k, 2.5b.
+  compact-display: true
+
+# Text returned by %wagers_messages% (used by settings dialogs). Use & colour codes.
+alerts-placeholder:
+  on: "&aON"
+  off: "&cOFF"
+
+betting:
+  min-bet: 10
+  max-bet: 10000
+
+slots:
+  # Multiplier paid when exactly two of the three reels match.
+  two-match-multiplier: 1.5
+  # Informational only — the true edge comes from the symbol weights in code.
+  house-edge-info: 0.05
+
+mines:
+  # Board is a fixed 5x5 (25 tiles). These bound the mine count a player may pick.
+  default-mines: 3
+  min-mines: 1
+  max-mines: 24
+  # 0.0 - 1.0. Shaves this fraction off the fair cash-out multiplier.
+  house-edge: 0.03
+
+jackpot:
+  # Pool value that remains after someone wins.
+  seed: 1000
+  # Fraction of each entry added to the pool (the remainder is house rake).
+  contribution-percent: 0.85
+  # Chance (0.0 - 1.0) that a single entry wins the entire pool.
+  win-chance: 0.02
+  # Minimum amount required to enter.
+  min-entry: 50
+
+messages:
+  prefix: "<gradient:#f7971e:#ffd200><bold>HavocCasino</bold></gradient> <dark_gray>»</dark_gray> "
+
+# ------------------------------------------------------------
+#  Gambling rooms
+#  Build a room, select it with /hc wand, save with /hc schem save <name>,
+#  then set it up: stand at the paste corner and run /hc room origin,
+#  and /hc room schematic <name>. Players use /gamblingroom to get their own.
+# ------------------------------------------------------------
+rooms:
+  # Saved schematic pasted when a player creates their room (set via /hc room schematic).
+  schematic: ""
+  # World + base corner (the schematic's minimum corner) where rooms are pasted.
+  world: "world"
+  origin:
+    x: 0
+    y: 100
+    z: 0
+  # Distance between adjacent rooms and how many per row before wrapping to a new row.
+  spacing:
+    x: 50
+    z: 50
+  columns: 10
+  # Where to drop the player, relative to the paste corner.
+  teleport-offset:
+    x: 0.5
+    y: 1.0
+    z: 0.5
+  # Set the schematic's bounding box to air before placing blocks (clean, faithful paste).
+  clear-air: true
+  # Money charged to create a room (0 = free).
+  cost: 0
+  # Safety + performance limits.
+  max-volume: 100000
+  blocks-per-tick: 2000
+
+# ------------------------------------------------------------
+#  Casino menu (open with /casinomenu — attach it to an NPC)
+# ------------------------------------------------------------
+casino-menu:
+  # Preset bet buttons shown for Slots / Mines / Jackpot (up to 7).
+  bet-presets: [10, 50, 100, 500, 1000]

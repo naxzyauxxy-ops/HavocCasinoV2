@@ -1,0 +1,62 @@
+name: HavocCasino
+version: '${project.version}'
+main: net.havoccasino.HavocCasino
+api-version: '1.21'
+authors: [Havoc]
+description: Premium casino games — slots and a progressive jackpot.
+website: https://havoccasino.example
+depend: [Vault]
+softdepend: [PlaceholderAPI]
+
+commands:
+  slots:
+    description: Spin the slot machine.
+    usage: /slots <bet>
+  mines:
+    description: Play a round of mines.
+    usage: /mines <bet> [mines]
+  jackpot:
+    description: View or enter the progressive jackpot.
+    usage: /jackpot [bet]
+  gcrate:
+    description: Browse and open HavocCasino gambling crates.
+    usage: /gcrate [name]
+    aliases: [gcrates]
+  gamblingroom:
+    description: Create or teleport to your own gambling room.
+    usage: /gamblingroom [tp|delete]
+    aliases: [groom, myroom]
+  casinomenu:
+    description: Open the casino menu (attach to an NPC).
+    usage: /casinomenu
+    aliases: [casino]
+  havoccasino:
+    description: Admin commands for HavocCasino.
+    usage: /havoccasino <reload|jackpot|wand|schem|room|messages>
+    aliases: [hcasino, hc]
+
+permissions:
+  havoccasino.slots:
+    description: Allows playing slots.
+    default: true
+  havoccasino.mines:
+    description: Allows playing mines.
+    default: true
+  havoccasino.jackpot:
+    description: Allows entering the jackpot.
+    default: true
+  havoccasino.crates:
+    description: Allows opening crates.
+    default: true
+  havoccasino.room:
+    description: Allows creating and teleporting to a personal gambling room.
+    default: true
+  havoccasino.menu:
+    description: Allows opening the casino menu.
+    default: true
+  havoccasino.messages:
+    description: Allows toggling your own HavocCasino messages.
+    default: true
+  havoccasino.admin:
+    description: Allows managing HavocCasino.
+    default: op
