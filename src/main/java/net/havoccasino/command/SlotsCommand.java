@@ -1,6 +1,8 @@
 package net.havoccasino.command;
 
 import net.havoccasino.HavocCasino;
+import net.havoccasino.gui.AmountPickerGui;
+import net.havoccasino.gui.MenuGame;
 import net.havoccasino.util.Msg;
 import net.havoccasino.util.Numbers;
 import org.bukkit.command.Command;
@@ -29,7 +31,7 @@ public final class SlotsCommand implements CommandExecutor {
             return true;
         }
         if (args.length == 0) {
-            Msg.send(player, "<gray>Usage: <white>/slots <bet>");
+            new AmountPickerGui(plugin, player, MenuGame.SLOTS).open();
             return true;
         }
 

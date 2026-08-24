@@ -38,7 +38,11 @@ public final class CratesCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        if (args.length == 0 || args[0].equalsIgnoreCase("list")) {
+        if (args.length == 0) {
+            new net.havoccasino.gui.CratePickerGui(plugin, player).open();
+            return true;
+        }
+        if (args[0].equalsIgnoreCase("list")) {
             listCrates(player);
             return true;
         }

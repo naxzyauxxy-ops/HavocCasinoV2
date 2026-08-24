@@ -11,7 +11,7 @@ softdepend: [PlaceholderAPI]
 commands:
   slots:
     description: Spin the slot machine.
-    usage: /slots <bet>
+    usage: /slots [bet]
   mines:
     description: Play a round of mines.
     usage: /mines <bet> [mines]
